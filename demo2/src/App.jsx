@@ -16,9 +16,16 @@ import {
 
 function App() {
   const [count, setCount] = useState(0)
+  const [bgclr, setBackground] = useState("white");
+  const dark = () => {
+    setBackground("black");
+  }
 
-  return (
-    <>
+  return (  
+    <div style = {{backgroundColor:bgclr}}>
+      
+      <button onClick={dark} >Dark Mode</button>
+
       {/* <form>
         <select>
           <option>Tamil Nadu</option>
@@ -28,8 +35,8 @@ function App() {
         </select>
       </form> */}
        
-       {/* <Button variant="custom">Button</Button> */}
-       <NavigationMenu>
+      {/* <Button variant="custom">Button</Button> */}
+        {/* <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Item 1</NavigationMenuTrigger>
@@ -40,9 +47,11 @@ function App() {
               </NavigationMenuContent>
             </NavigationMenuItem>
           </NavigationMenuList>
-        </NavigationMenu>
-    </>
+        </NavigationMenu> */}
+
+    </div>
   )
+
 }
 
 export default App
