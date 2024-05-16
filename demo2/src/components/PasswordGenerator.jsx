@@ -7,6 +7,7 @@ function PasswordGenerator() {
     const[includeUppercase,setIncludeUppercase] = useState(false);
     const[password,setPassword] = useState('');
 
+
     const generatePassword = () =>{
         let characters = "abcdefghijklmnopqrstuvwxyz"
         if(includeNums){
@@ -20,7 +21,7 @@ function PasswordGenerator() {
         }
         let newPassword = "";
         for(let i=1; i<length;i++){
-            newPassword +=characters.charAt(Math.floor(Math.random() * characters.length))
+            newPassword +=characters.charAt(Math.floor(Math.random() * characters.length)+1)
         }
         setPassword(newPassword);
         console.log(newPassword);
@@ -40,6 +41,7 @@ function PasswordGenerator() {
                     <input type="checkBox" onChange={()=>setIncludeUppercase(!includeUppercase)}/> Include Uppercase Letters
                 </div>
             </div>
+            <h1>{password}</h1>
             <div className=''>
                 <button className="bg-blue-300 px-12 py-2 rounded-3xl" onClick={generatePassword}>Generate</button> 
             </div>
